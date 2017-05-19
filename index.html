@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Index
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="myController">
+        <input type="text" ng-model="txtName">
+        <h2>Ten vua nhap la: {{txtName}}</h2>
+        <p ng-repeat="x in list"> {{x.name}}[{{x.id}}]</p>
+    </body>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function ($scope) {
+
+            $scope.list = [{'id': '001', 'name': 'Le Van A'}, {'id': '002', 'name': 'Le Van B'}];
+
+        });
+
+    </script>
+</html>
